@@ -83,10 +83,10 @@
       /* ESERCIZIO 1
          Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
       */
-      const title = document.getElementsByTagName("h1")[0];
-      console.log(title);
 
       const changeTitle = function (text) {
+        const title = document.getElementsByTagName("h1")[0];
+        console.log(title);
         title.innerText = text;
       };
 
@@ -111,8 +111,13 @@
       /* ESERCIZIO 4
          Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
         */
+      const links = document.querySelector("a:not(footer a)");
 
-      const changeUrls = function () {};
+      const changeUrls = function () {
+        for (let i = 0; i < links.length; i++) {
+          links[i].href = "https://www.google.com";
+        }
+      };
 
       /* ESERCIZIO 5
          Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
@@ -131,39 +136,68 @@
       /* ESERCIZIO 6
          Scrivi una funzione che aggiunga un paragrafo al primo div
       */
+      const firstdiv = document.querySelector("body div");
+      console.log(firstdiv);
 
-      const addParagraph = function () {};
+      const addParagraph = function (text) {
+        const newP = document.createElement("p");
+        newP.innerText = text;
+        firstdiv.appendChild(newP);
+      };
 
       /* ESERCIZIO 7
          Scrivi una funzione che faccia scomparire la prima lista non ordinata
       */
+      const firstul = document.getElementById("firstList");
+      console.log(firstul);
 
-      const hideFirstUl = function () {};
+      const hideFirstUl = function () {
+        firstul.remove();
+      };
 
       /* ESERCIZIO 8
          Scrivi una funzione che renda verde il background di ogni lista non ordinata
         */
 
-      const paintItGreen = function () {};
+      const paintItGreen = function () {
+        const listul = document.querySelectorAll("ul");
+        console.log(listul);
+        for (let i = 0; i < listul.length; i++) {
+          listul[i].classList.add("bgGreen");
+        }
+      };
 
       /* ESERCIZIO 9
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
 
-      const makeItClickable = function () {};
+      const makeItClickable = function () {
+        const title = document.getElementsByTagName("h1");
+        console.log(title);
+        title.onclick=
+      };
 
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
 
-      const revealFooterLink = function () {};
+      const revealFooterLink = function () {
+        const footer1 = document.querySelector("footer");
+        console.log(title);
+        footer.onclick = function(){
+
+        }
+      };
 
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
       */
 
-      const generateTable = function () {};
+      const generateTable = function () {
+        const table = document.getElementById("tableArea");
+
+      };
 
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
@@ -181,7 +215,10 @@
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
 
-      const changeColorWithRandom = function () {};
+      const changeColorWithRandom = function () {
+        const randomcolor = document.querySelectorAll("h2")
+
+      };
 
       /* EXTRA ESERCIZIO 16
         Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
